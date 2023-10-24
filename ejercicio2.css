@@ -1,0 +1,45 @@
+body{
+    font-size: arial, helvetica, sans-serif;
+    margin:0 auto;
+    width: 800px;
+}
+header{
+    background-color: azure;
+    width: 90%;
+    text-align: center;
+    padding: 40px;
+    height: 200px;
+}
+.perfil {
+    background-color: azure;
+    text-align: center; 
+}
+
+h2{ 
+    strong
+}
+
+.borde-de-imagen {
+    border-radius: 80px;
+    padding: 30px 30px;
+    background-color: yellow;
+    height: 110px;
+}
+
+.row{
+    display: flex;
+    flex-wrap: nowrap;
+}
+aside{
+    flex: 50%;
+    background-color: beige;
+    padding: 10px;
+    
+
+}
+section{
+    flex: 50%;
+    background-color: rgb(226, 226, 223);
+    padding: 10px;
+    
+}
