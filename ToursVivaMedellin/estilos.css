@@ -1,0 +1,437 @@
+/* aca reseteamos la pagina a estos valores */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Cambiamos el tipo de letra a todo el body */
+body {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+.btn {
+  /* Propiedades de los botones de cotizacion */
+  padding: 10px;
+  background-color: #999;
+  color: white;
+  border: 2px solid transparent;
+  text-decoration: none;
+  border-radius: 15px;
+}
+.btn:hover {
+  padding: 10px;
+  background-color: #999;
+  color: white;
+  border: 2px solid #888;
+}
+.contenedor {
+  /* A todas las clases contenedor le damos estilos */
+  padding: 60px 0;
+  width: 90%;
+  max-width: 1000px; /* un maximo de ancho de 1000px */
+  margin: auto;
+  overflow: hidden;
+  height: auto; /*  */
+}
+
+/* Le damos estilos a los titulos */
+.titulo {
+  color: red;
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 60px;
+  padding-top: 10px;
+}
+
+/* Creamos los estilos de la imagen de fondo de la seccion de inicio */
+header {
+  width: 100%;
+  height: 900px;
+  background: #ff4b1f; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, hsla(272, 55%, 78%, 0.7), hsla(272, 55%, 78%, 0.7)),
+    url(./imagenes/medellinpostal1.jpg); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, hsla(272, 55%, 78%, 0.7), hsla(272, 55%, 78%, 0.7)),
+    url(./imagenes/medellinpostal1.jpg); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+}
+
+/* Para que el menu se ponga sobre las imagenes con el z-index */
+.top {
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+}
+/* Los estilos de los botones del menu responsivo  */
+.buttom {
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  bottom: 0;
+  text-align: center;
+  padding: 10px 10px;
+  display: flex;
+  justify-content: space-evenly;
+  background-color: rgb(230, 67, 67);
+}
+
+/* Estilos para la barra de navegacion */
+nav {
+  text-align: right;
+  padding: 30px 50px 0 0;
+  background-color: rgb(230, 67, 67);
+  padding-bottom: 15px;
+}
+
+nav > a {
+  color: white;
+  font-weight: 300;
+  text-decoration: none;
+  margin-right: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+nav > a:hover {
+  text-decoration: underline;
+}
+/* las propiedades para el texto encima de la imagen de inicio */
+header .textos-header {
+  display: flex;
+  height: 420px;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.textos-header h1 {
+  font-size: 50px;
+  color: red;
+}
+
+.textos-header h2 {
+  font-size: 30px;
+  font-weight: 300;
+  color: rgb(16, 16, 173);
+}
+/* Los estilos del logo */
+header section img {
+  width: 300px;
+  border-radius: 300px;
+  margin-top: 150px;
+  margin-bottom: 10px;
+}
+/* Los estilos de la Ola de la imagen de inicio */
+.wave {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Los estilos de la seccion sobre nosotros*/
+.contenedor-sobre-nosotros {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.imagen-about-us {
+  width: 48%;
+}
+.sobre-nosotros .contenido-textos {
+  width: 48%;
+  padding-top: 60px;
+}
+
+.contenido-textos h3 {
+  margin-bottom: 15px;
+}
+
+.contenido-textos h3 span {
+  background: red;
+  color: #fff;
+  border-radius: 50%;
+  display: inline-block;
+  text-align: center;
+  width: 10px;
+  height: 10px;
+  padding: 5px;
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.5);
+  margin-right: 5px;
+}
+.contenido-textos p {
+  padding: 0px 0px 30px 15px;
+  font-weight: 300;
+  text-align: justify;
+}
+/* Los estilos que se le aplican a la galeria */
+
+.portafolio {
+  background: #f2f2f2;
+}
+
+.galeria-port {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.imagen-port {
+  width: 24%;
+  margin-bottom: 10px;
+  height: 180px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.5);
+}
+.imagen-port > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+/* Los estilos al momento de poner el mause sobre la imagen en la galeria */
+.hover-galeria {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  transform: scale(0);
+  background: hsla(272, 55%, 78%, 0.7);
+  transition: transform 0.5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.hover-galeria img {
+  width: 50px;
+}
+
+.hover-galeria p {
+  color: #fff;
+}
+
+.imagen-port:hover .hover-galeria {
+  transform: scale(1);
+}
+
+/* Los estilos a twiters de los comentarios de nuestros clientes */
+
+.grid-comments {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  padding: 5px;
+  width: 80%;
+  margin: 0 auto;
+}
+.grid-comments h2 {
+  grid-column: 1/ 5;
+}
+.grid-comments-child {
+  padding: 20px;
+  grid-column: 1/ 5;
+}
+.twitter-tweet {
+  width: 100% !important;
+}
+
+/* Los estilos a la seccion de  Nuestros Servicios*/
+
+.about-services {
+  background: white;
+  padding-bottom: 30px;
+  width: 100%;
+  align-items: center;
+}
+
+.servicio-cont {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.servicio-ind {
+  width: 25%;
+  text-align: center;
+  border: 1px;
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.5);
+  margin: 20px;
+  transition: all 400ms ease;
+  display: inline-block;
+}
+.servicio-ind:hover {
+  box-shadow: 5px, 5px, 20px rgb(0, 0, 0, 0.4);
+  transform: translateY(-3%);
+}
+
+.servicio-ind img {
+  width: 100%;
+  height: 200px;
+}
+
+.servicio-ind h3 {
+  color: red;
+  padding: 30px;
+}
+.titulo-descripcion {
+  text-align: left;
+  color: blue;
+  padding: 30px;
+}
+
+.servicio-ind p {
+  font-weight: 300;
+  text-align: justify;
+  padding: 30px;
+}
+
+/* Los estilos al Footer*/
+
+footer {
+  background: gray;
+  padding: 60px 0 30px 0;
+  margin: auto;
+  overflow: hidden;
+}
+
+.contenedor-footer {
+  display: flex;
+  width: 90%;
+  justify-content: space-evenly;
+  margin: auto;
+  padding-bottom: 50px;
+  border-bottom: 1px solid rgb(50, 47, 47);
+}
+
+.content-foo {
+  text-align: center;
+}
+.content-foo h4 {
+  color: white;
+  border-bottom: 3px solid #af20d3;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+
+.content-foo p {
+  color: white;
+  display: flex;
+  justify-content: space-evenly;
+}
+.content-foo p a {
+  color: white;
+  text-decoration: none;
+}
+
+.titulo-final {
+  text-align: center;
+  font-size: 24px;
+  margin: 5px 0 0 0;
+  color: #f3eded;
+  padding-bottom: 40px;
+}
+
+/* estilo del Boton whatsapp */
+.float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 40px;
+  right: 40px;
+  background-color: #25d366;
+  color: #fff;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: 2px 2px 3px #999;
+  z-index: 100;
+  margin-bottom: 30px;
+}
+.float:hover {
+  text-decoration: none;
+  color: #25d366;
+  background-color: #fff;
+}
+
+.my-float {
+  margin-top: 16px;
+}
+
+/* Aca iniciamos los estilos responsivos al momento de un dispositivo movil */
+@media screen and (max-width: 900px) {
+  /* Header */
+
+  header {
+    background-position: center;
+  }
+  .contenedor-sobre-nosotros {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .sobre-nosotros .contenido-textos {
+    width: 90%;
+  }
+
+  .imagen-about-us {
+    width: 90%;
+  }
+
+  /*galeria*/
+  .imagen-port {
+    width: 44%;
+  }
+
+  /*Cliente*/
+  .grid-comments-child {
+    padding: 20px;
+    grid-column: 1/ 5;
+    width: 65%;
+  }
+  /*Servicios*/
+  .servicio-cont {
+    justify-content: center;
+    flex-direction: column;
+  }
+  .servicio-ind {
+    width: 100%;
+    justify-content: center;
+  }
+  .servicio-ind:nth-child(1),
+  .servicio-ind:nth-child(2) {
+    margin-bottom: 60px;
+  }
+  .servicio-ind img {
+    width: 90%;
+  }
+  /* Contacto */
+  .contenedor-footer {
+    justify-content: center;
+    flex-direction: column;
+  }
+  .content-foo {
+    width: 100%;
+    text-align: center;
+  }
+
+  .servicio-cont {
+    width: 90%;
+  }
+}
+
+/*  Menu por defecto*/
+@media screen and (max-width: 768px) {
+  .top {
+    display: none;
+  }
+}
+/* Al momento que el responsivo encuentre una medida menos de 768px aparece este menu */
+@media screen and (min-width: 768px) {
+  .buttom {
+    display: none;
+  }
+}
